@@ -4,20 +4,34 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
+function timeConverter(UNIX_timestamp){
+var a = new Date(UNIX_timestamp * 1000);
+var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var year = a.getFullYear();
+var month = months[a.getMonth()];
+var date = a.getDate();
+var time = date + ' ' + month + ' ' + year;
+return time;
+}
+
 $(document).ready(function() {
   $("#searchForm").submit(function(event) {
     event.preventDefault();
 
-    let search = $("#citySearch").val();
-    $.get(`https://bikeindex.org:443/api/v3/search?page=1&distance=10&access_token=aa45bbc94ec9400aadaa60789da416eab879a757b556b54d56fbc485c1feb8b1&location=${search}`).then(function(response) {
+    let citySearch = $("#citySearch").val();
+    let distanceSearch = $("#distanceSearch").val();
+
+    $.get(`https://bikeindex.org:443/api/v3/search?page=1&per_page=25&location= ${citySearch}&distance=${distanceSearch}&stolenness=proximity&access_token=process.env.API_KEY`).then(function(response) {
 
       for( let i = 0; i < response.bikes.length; i++)
       {
-        $("#bikeTitle").append("<li>" + response.bikes[i].title + "</li>" + "<br>");
-        $("#bikeColor").append("<li>" + response.bikes[i].frame_colors + "</li>" + "<br>");
-        $("#dateStolen").append("<li>" + response.bikes[i].date_stolen + "</li>" + "<br>");
+
+        $("#output").append(`<img src=${response.bikes[i].thumb}>` + "<ul>" + "<h3>" + response.bikes[i].title + "</h3>" + "<br>" + "<h4>" + "<strong> Color: </strong> " + response.bikes[i].frame_colors + "</h4>" + "<br>" + "<h4>" + "<strong> Date stolen: </strong>" + timeConverter(response.bikes[i].date_stolen) + "</h4>" + "</ul>" + "<hr>");
       }
-    })
+    }).fail(function(error) {
+      $("#showErrors").text("There was an error in processing your request: ${error.responseText}. Please try again!")
+    });
+
 
   });
 });

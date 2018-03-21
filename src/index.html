@@ -7,19 +7,23 @@
   <body>
     <div class="container">
 
-    <h1>Find your Bike!</h1>
+    <h1>Find your stolen bike!</h1>
 
     <form id="searchForm">
       <label for="citySearch">Search City:</label>
       <input type="text" id="citySearch" name="citySearch">
       <br>
+      <label for="distanceSearch">Distance:</label>
+      <input type="text" id="distanceSearch" name="distanceSearch">
+      <br>
       <button type="submit" class="btn btn-info" name="button">Search</button>
     </form>
 
-    <div class="output">
-        <h3 id="bikeTitle"></h3>
-        <h4 id="bikeColor"></h4>
-        <h4 id="dateStolen"></h4>
+    <div id="output">
+    </div>
+    <div id"showErrors">
+    </div>
+
     </div>
   </div>
 
