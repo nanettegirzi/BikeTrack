@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>BikeTrack</title>
-  </head>
-  <body>
-    <div class="container">
+<head>
+  <meta charset="utf-8">
+  <title>BikeTrack</title>
+</head>
+<body>
+  <div class="container">
 
-    <h1>Find your stolen bike!</h1>
+    <div class="jumbotron">
+      <h1>SEARCH FOR NEARBY STOLEN BIKES</h1>
+
+    </div>
+    <br>
 
     <form id="searchForm">
-      <label for="citySearch">Search City:</label>
-      <input type="text" id="citySearch" name="citySearch">
+      <div class="form-group">
+        <label for="citySearch">Search City:</label>
+        <input type="text" class="form-control" id="citySearch" name="citySearch">
+      </div>
       <br>
-      <label for="distanceSearch">Distance:</label>
-      <input type="text" id="distanceSearch" name="distanceSearch">
+      <div class="form-group">
+        <label for="distanceSearch">Distance:</label>
+        <input type="text" class="form-control" id="distanceSearch" name="distanceSearch">
+      </div>
       <br>
       <button type="submit" class="btn btn-info" name="button">Search</button>
+      <button type="reset" value="reset" class="btn btn-warning" name="button">Reset</button>
     </form>
+    <br>
 
     <div id="output">
     </div>
-    <div id"showErrors">
+    <div id="showErrors">
     </div>
 
-    </div>
+
   </div>
 
-  </body>
+
+</body>
 </html>

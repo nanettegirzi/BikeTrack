@@ -26,7 +26,7 @@ $(document).ready(function() {
       for( let i = 0; i < response.bikes.length; i++)
       {
 
-        $("#output").append(`<img src=${response.bikes[i].thumb}>` + "<ul>" + "<h3>" + response.bikes[i].title + "</h3>" + "<br>" + "<h4>" + "<strong> Color: </strong> " + response.bikes[i].frame_colors + "</h4>" + "<br>" + "<h4>" + "<strong> Date stolen: </strong>" + timeConverter(response.bikes[i].date_stolen) + "</h4>" + "</ul>" + "<hr>");
+        $("#output").append("<ul>" + `<img src=${response.bikes[i].thumb} onerror="this.src='https://image.flaticon.com/icons/svg/13/13698.svg';">` + "<h3>" + response.bikes[i].title + "</h3>" + "<br>" + "<h4>" + "<strong> Color: </strong> " + response.bikes[i].frame_colors + "</h4>" + "<br>" + "<h4>" + "<strong> Date stolen: </strong>" + timeConverter(response.bikes[i].date_stolen) + "</h4>" + "</ul>" + "<hr>");
       }
     }).fail(function(error) {
       $("#showErrors").text("There was an error in processing your request: ${error.responseText}. Please try again!")
