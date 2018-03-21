@@ -32,6 +32,10 @@ $(document).ready(function() {
       $("#showErrors").text("There was an error in processing your request: ${error.responseText}. Please try again!")
     });
 
+    ("#resetButton").click(function(){
+      ("#citySearch").val("");
+      ("#distanceSearch").val("");
+    })
 
   });
 });

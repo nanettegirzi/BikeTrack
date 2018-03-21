@@ -9,3 +9,7 @@ img {
   box-shadow: 0px 0px 10px black;
   margin-bottom: 15px;
 }
+
+.jumbotron {
+  text-align: center;
+}
