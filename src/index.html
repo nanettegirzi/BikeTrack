@@ -8,7 +8,9 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1>SEARCH FOR NEARBY STOLEN BIKES</h1>
+      <h1>BikeTrack</h1>
+      <hr>
+      Find stolen bikes near your location
 
     </div>
     <br>
@@ -25,18 +27,21 @@
       </div>
       <br>
       <button type="submit" class="btn btn-info" name="button">Search</button>
-      <button type="reset" value="reset" class="btn btn-warning" name="button" id="resetButton">Reset</button>
+      <a href="/" class="btn btn-warning">Reset</a>
     </form>
     <br>
 
-    <div id="output">
+    <div class="row">
+      <div id="output" class="col-md-8">
+        <ul class="bikeBoxes">
+        </ul>
     </div>
+  </div>
     <div id="showErrors">
     </div>
 
 
   </div>
-
 
 </body>
 </html>
