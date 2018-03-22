@@ -1,3 +1,7 @@
+body {
+  background-color: lightgrey;
+}
+
 #showErrors {
   display: none;
 }
@@ -9,15 +13,14 @@
 }
 
 .jumbotron {
+  background-color: #CAEBF2;
   text-align: center;
-}
-
-.col-md-2 {
-  background-color: lightgray;
+  color: #A9A9A9;
+  font-weight: bolder;
 }
 
 h3 {
-  color: dodgerblue;
+  color: darkblue;
 }
 
 #infoHeaders {
